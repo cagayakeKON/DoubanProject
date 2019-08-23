@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>豆瓣电影数据可视化分析平台</title>
     <script src="./plugin/jquery.js"></script>
     <script src="./plugin//echarts.js"></script>
     <script src="./plugin/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./plugin/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <script src="./JS/view_JS/module1.js"></script>
+    <link rel="stylesheet" href="./CSS/module1.css">
+    
 
     <style>
-        form.module1{
-            width: 230px;
-        }
+        
     </style>
 </head>
 
@@ -101,9 +100,9 @@
                 <div class="mt-5 tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
-                        <form  class="m-auto module1" action="/models1" method="GET">
+                        <form  class="m-auto module1">
                                 
-                                <select name="country" class="custom-select-sm">
+                                <select id="module1CountrySelect" name="country" class="custom-select-sm">
                                   <option selected>请选择国家选择一</option>
                                   <option value="China">中国大陆</option>
                                   <option value="America">美国</option>
@@ -128,8 +127,10 @@
 
 
                                 </select>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="module1ButtonSubmit">Submit</button>
                               </form>
+
+                              <div id="graph"></div>
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
@@ -154,5 +155,5 @@
         </div>
     </div>
 </body>
-
+<script src="./JS/view_JS/module1.js"></script>
 </html>

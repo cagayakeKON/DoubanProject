@@ -9,9 +9,9 @@ function mainPage(req, res) {
 
 
 function module1(req,res){
-    var country=req.query;
+    var country=req.params;
     console.log(country);
-    res.send(req.query);
+    res.send(req.params);
 
 
 }
