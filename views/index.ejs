@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./plugin/jquery.js"></script>
+    <script src="./plugin//echarts.js"></script>
+    <script src="./plugin/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./plugin/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="./JS/view_JS/module1.js"></script>
+
+    <style>
+        form.module1{
+            width: 230px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+            <ul class="m-auto navbar-nav">
+                <li class=" nav-item active">
+                    <a class=" nav-link disabled" href="#">
+                        <h3 class="title">豆瓣电影数据可视化分析平台V1.02 <span class="badge badge-pill badge-info">2009-2019</span>
+                        </h3>
+                    </a>
+                </li>
+
+
+                <!--折叠按钮-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- 这是折叠的菜单栏,在小设备显示 -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div class="nav mt-5 flex-column nav-pills  d-sm-block d-md-none" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">影评分和电影数量分析</a>
+
+                        <a class="nav-link mt-3" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">影评分和电影数量对比分析</a>
+
+                        <a class="nav-link mt-3" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                            role="tab" aria-controls="v-pills-messages" aria-selected="false">近十年每年发行的电影分析</a>
+
+                        <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                            role="tab" aria-controls="v-pills-settings" aria-selected="false">2019各个国家发行的电影数量分析</a>
+
+                        <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings2"
+                            role="tab" aria-controls="v-pills-settings" aria-selected="false">近十年中国发行的电影评分</a>
+
+                        <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings3"
+                            role="tab" aria-controls="v-pills-settings" aria-selected="false">近十年中国发行的电影每一年的数量分布图</a>
+
+                        <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings4"
+                            role="tab" aria-controls="v-pills-settings" aria-selected="false">2019年评分在5分以下的电影名称</a>
+                    </div>
+                </div>
+
+            </ul>
+        </nav>
+
+
+
+        <!--这是大设备的选项按钮-->
+        <div class="row">
+            <div class="col-md-2">
+                <div class="nav mt-5 flex-column nav-pills 	d-sm-none d-none  d-md-block" id="v-pills-tab"
+                    role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">影评分和电影数量分析</a>
+
+                    <a class="nav-link mt-3" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                        role="tab" aria-controls="v-pills-profile" aria-selected="false">影评分和电影数量对比分析</a>
+
+                    <a class="nav-link mt-3" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                        role="tab" aria-controls="v-pills-messages" aria-selected="false">近十年每年发行的电影分析</a>
+
+                    <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                        role="tab" aria-controls="v-pills-settings" aria-selected="false">2019各个国家发行的电影数量分析</a>
+
+                    <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings2"
+                        role="tab" aria-controls="v-pills-settings" aria-selected="false">近十年中国发行的电影评分</a>
+
+                    <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings3"
+                        role="tab" aria-controls="v-pills-settings" aria-selected="false">近十年中国发行的电影每一年的数量分布图</a>
+
+                    <a class="nav-link mt-3" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings4"
+                        role="tab" aria-controls="v-pills-settings" aria-selected="false">2019年评分在5分以下的电影名称</a>
+                </div>
+            </div>
+
+            <!--内容区-->
+            <div class="col-md-10">
+                <div class="mt-5 tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <form  class="m-auto module1" action="/models1" method="GET">
+                                
+                                <select name="country" class="custom-select-sm">
+                                  <option selected>请选择国家选择一</option>
+                                  <option value="China">中国大陆</option>
+                                  <option value="America">美国</option>
+                                  <option value="Taiwan">中国台湾</option>
+                                  <option value="Japan">日本</option>
+                                  <option value="Korea">韩国</option>
+                                  <option value="England">英国</option>
+                                  <option value="france">法国</option>
+                                  <option value="Germany">德国</option>
+                                  <option value="Italy">意大利</option>
+                                  <option value="Spain">西班牙</option>
+                                  <option value="India">印度</option>
+                                  <option value="Thailand">泰国</option>
+                                  <option value="Russia">俄罗斯</option>
+                                  <option value="Iran">伊朗</option>
+                                  <option value="Canada">加拿大</option>
+                                  <option value="Australia">澳达伊亚</option>
+                                  <option value="Ireland">爱尔兰</option>
+                                  <option value="Sweden">瑞典</option>
+                                  <option value="Brazil">巴西</option>
+                                  <option value="Denmark">丹麦</option>
+
+
+                                </select>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">2</div>
+
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">3</div>
+
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">4</div>
+
+                    <div class="tab-pane fade" id="v-pills-settings2" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">5</div>
+
+                    <div class="tab-pane fade" id="v-pills-settings3" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">6</div>
+
+                    <div class="tab-pane fade" id="v-pills-settings4" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
