@@ -1,8 +1,19 @@
 function graphRender() {
 	var myChart = echarts.init(document.getElementById('graph'));
 	var myData;
+	var options = $("#module1CountrySelect option:selected");
+	myChart.showLoading();
+
+	$.ajax({
+		url: `http://127.0.0.1:8000/module1/${options.val()}`,
+		success: function (result) {
+			renderGraph(result);
+		},
+		async:true
+	});
 	$('#module1ButtonSubmit').on('click', function () {
 		var options = $("#module1CountrySelect option:selected");
+		myChart.showLoading();
 
 		$.ajax({
 			url: `http://127.0.0.1:8000/module1/${options.val()}`,
@@ -111,6 +122,7 @@ function graphRender() {
 
 
 			myChart.setOption(tempOptions);
+			myChart.hideLoading();
 
 
 	}
