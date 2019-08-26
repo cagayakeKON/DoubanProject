@@ -1,6 +1,6 @@
 var url = "mongodb://localhost:27017/doubanDatabases"
 var mongoClient = require('mongodb').MongoClient;
-var superagent = require("superagent");
+
 
 
 //前面两个个为获取数据的时候使用的函数
@@ -84,15 +84,24 @@ function saveCountryData(object, collectionName) {
 
 
 
-function findCountryDocument(countryName, callback) {
-    var data;
+function findModule1CountryDocument(countryName, callback) {
 
-    callback(data);
+
+    mongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("doubanDatabases");
+        dbo.collection(countryName).find().toArray(function(err, result) {
+            if (err) throw err;
+            db.close();
+            callback(result);
+            
+        });
+    });
 }
-
 
 
 module.exports = {
     saveAllData: saveAllData,
-    saveCountryData: saveCountryData
+    saveCountryData: saveCountryData,
+    findModule1CountryDocument:findModule1CountryDocument
 }
