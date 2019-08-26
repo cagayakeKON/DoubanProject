@@ -23,7 +23,7 @@ function saveAllData(object) {
         useNewUrlParser: true
     }, function (error, db) {
         if (error) {
-            console.log(链接数据库失败error)
+            console.log("链接数据库失败error")
         }
 
         var nowDb = db.db('doubanDatabases');
