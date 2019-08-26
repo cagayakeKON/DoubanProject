@@ -1,6 +1,5 @@
 function graphRender() {
 	var myChart = echarts.init(document.getElementById('graph'));
-	var myData;
 	var options = $("#module1CountrySelect option:selected");
 	myChart.showLoading();
 
@@ -11,6 +10,12 @@ function graphRender() {
 		},
 		async:true
 	});
+	/*window.onresize = function(){
+		myChart.resize();
+	}*/
+
+
+
 	$('#module1ButtonSubmit').on('click', function () {
 		var options = $("#module1CountrySelect option:selected");
 		myChart.showLoading();
@@ -28,6 +33,14 @@ function graphRender() {
         });*/
 
 	});
+
+    window.onresize = function(){
+		myChart.resize();
+		var myChart2 = echarts.init(document.getElementById('graph2'));
+		myChart2.resize();
+
+    }
+   
 
 	//var rateInterval=['9.5-10.0','8.5-9.0','7.5-8.0','6.5-7.0','5.5-6.0','4.5-5.0','3.5-4.0','2.5-3.0','小于2.5']
 	function renderGraph(result) {
@@ -66,7 +79,7 @@ function graphRender() {
 				case rate >= 4.5 && rate < 5.5:
 					bar6.push(JSONData[i]);
 					break;
-				case rate >= 3.5 && rate < 2.5:
+				case rate >= 3.5 && rate < 4.5:
 					bar7.push(JSONData[i]);
 					break;
 				case rate >= 2.5 && rate < 3.5:
@@ -114,10 +127,10 @@ function graphRender() {
 
 		var count=[bar1.length,bar2.length,bar3.length,bar4.length,bar5.length,bar6.length,bar7.length,bar8.length,bar9.length]
 
-		tempOptions.series[0].data=[];
+		tempOptions.baseOption.series[0].data=[];
 		for(let item of count)
 		{
-			tempOptions.series[0].data.push(item);
+			tempOptions.baseOption.series[0].data.push(item);
 		}
 
 
@@ -128,7 +141,7 @@ function graphRender() {
 	}
 
 	var tempOptions = {
-		title: {
+		baseOption:{title: {
 			text: '影评分和电影数量分析'
 		},
 		tooltip: {},
@@ -146,19 +159,38 @@ function graphRender() {
 			nameLocation: "end",
 		},
 		series: [{
+				name:'数量',
 				type: 'bar',
 				data: []
 			}
 
+		]},
+
+		
+		media: [
+			{
+				option:{
+					legend:{
+						legend:{
+							left:"center"
+						},
+						series:{
+							width:'100%',
+							height:'100%'
+						}
+					}
+				}
+				
+			}
+
+		
 		]
-		
-			
-		
-			
+					
 		
 	};
 
 }
+
 $(graphRender());
 /*$.get("http://127.0.0.1:8000/module1_data", function (data) {
 	console.log(data);

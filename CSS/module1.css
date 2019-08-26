@@ -2,8 +2,21 @@ form.module1{
     width: 230px;
 }
 
+
+
 div#graph{
-    width: 950px;
+    width: 930px;
     height: 530px;
+    margin-top: 20px;
     
+}
+
+
+@media screen and (max-width: 756px) {
+    div#graph{
+        width: 540px;
+        height: 530px;
+        margin-top: 20px;
+        
+    }
 }

@@ -3,7 +3,17 @@ form.module2{
 }
 
 div#graph2{
-    width: 950px;
+    width: 930px;
     height: 530px;
+    margin-top: 20px;
     
+}
+
+@media screen and (max-width: 756px) {
+    div#graph2{
+        width: 540px;
+        height: 530px;
+        margin-top: 20px;
+        
+    }
 }
