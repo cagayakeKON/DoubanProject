@@ -166,10 +166,18 @@ function module1(req, res) {
 
 
 }
+function module7(req,res){
+    model.module7FindChinaRateLess5MovieName(function(data){
+        res.write(JSON.stringify(data));
+        res.end("");
+    })
+
+}
 
 module.exports = {
     mainPage: mainPage,
     module1: module1,
-    module2: module2
+    module2: module2,
+    module7:module7
 
 }

@@ -35,9 +35,12 @@ function graphRender() {
 	});
 
     window.onresize = function(){
-		myChart.resize();
+	
 		var myChart2 = echarts.init(document.getElementById('graph2'));
+		var myChart7 = echarts.init(document.getElementById('graph7'));
 		myChart2.resize();
+		myChart7.resize();	
+		myChart.resize();
 
     }
    

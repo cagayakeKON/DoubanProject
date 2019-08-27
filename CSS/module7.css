@@ -1,0 +1,16 @@
+
+div#graph7{
+    width: 930px;
+    height: 530px;
+    margin-top: 20px;
+    
+}
+
+@media screen and (max-width: 756px) {
+    div#graph7{
+        width: 540px;
+        height: 530px;
+        margin-top: 20px;
+        
+    }
+}
