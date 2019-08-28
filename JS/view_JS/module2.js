@@ -248,7 +248,9 @@ function graphRender() {
         title: {
             text: '影评分和电影数量分析'
         },
-        tooltip: {},
+        tooltip: {
+            trigger: 'axis'
+        },
         legend: {
             data: []
         },
@@ -265,12 +267,14 @@ function graphRender() {
         series: [{
                 name: '',
                 type: 'line',
-                data: []
+                data: [],
+                symbolSize: 15
             },
             {
                 name: '',
                 type: 'line',
-                data: []
+                data: [],
+                symbolSize: 15
             }
 
         ]
