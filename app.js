@@ -14,6 +14,11 @@ app.get("/",controller.mainPage);
 app.get('/module1/:id',controller.module1);
 app.get('/module2/:id',controller.module2);
 app.get('/module7',controller.module7);
+app.get('/module4',controller.module4);
+app.get('/module3',controller.module3);
+app.get('/module5',controller.module5);
+
+
 app.listen(8000,function(){
     console.log("服务器已启动");
 })

@@ -82,29 +82,49 @@ function saveCountryData(object, collectionName) {
 
 }
 
-
-
-function findModule1CountryDocument(countryName, callback) {
-
-
-    mongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+function findAllData(callback) {
+    mongoClient.connect(url, {
+        useNewUrlParser: true
+    }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
-        dbo.collection(countryName).find().toArray(function(err, result) {
+        dbo.collection('main2').find().toArray(function (err, result) {
             if (err) throw err;
             db.close();
             callback(result);
-            
+
         });
     });
 }
 
-function module7FindChinaRateLess5MovieName(callback)
-{
-    mongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
+function findModule1CountryDocument(countryName, callback) {
+
+
+    mongoClient.connect(url, {
+        useNewUrlParser: true
+    }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
-        dbo.collection('main2').find({'date':/2019/,'country':/中国大陆/,"rate":/^[0-5].[0-9]*$/}).toArray(function(err, result) {
+        dbo.collection(countryName).find().toArray(function (err, result) {
+            if (err) throw err;
+            db.close();
+            callback(result);
+
+        });
+    });
+}
+
+function module7FindChinaRateLess5MovieName(callback) {
+    mongoClient.connect(url, {
+        useNewUrlParser: true
+    }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("doubanDatabases");
+        dbo.collection('main2').find({
+            'date': /2019/,
+            'country': /中国大陆/,
+            "rate": /^[0-5].[0-9]*$/
+        }).toArray(function (err, result) {
             if (err) throw err;
             db.close();
             callback(result);
@@ -115,6 +135,8 @@ function module7FindChinaRateLess5MovieName(callback)
 module.exports = {
     saveAllData: saveAllData,
     saveCountryData: saveCountryData,
-    findModule1CountryDocument:findModule1CountryDocument,
-    module7FindChinaRateLess5MovieName:module7FindChinaRateLess5MovieName
+    findModule1CountryDocument: findModule1CountryDocument,
+    module7FindChinaRateLess5MovieName: module7FindChinaRateLess5MovieName,
+    findAllData:findAllData
+   
 }

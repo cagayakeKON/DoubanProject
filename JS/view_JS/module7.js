@@ -1,6 +1,6 @@
-var myChart = echarts.init(document.getElementById('graph7'));
+var myChart7 = echarts.init(document.getElementById('graph7'));
 
-myChart.showLoading()
+myChart7.showLoading()
 
 
 
@@ -9,48 +9,48 @@ $.ajax({
     success: function (result) {
         //data2=JSON.parse(result)
 
-        renderGraph(result);
+        renderGraph7(result);
     },
     async: true
 });
 
 
 
-function renderGraph(data) {
+function renderGraph7(data) {
 
     // option.series[0].data=data;  为什么
 
     //var data2Temp = JSON.parse(data2);
-    var dataArray = JSON.parse(data)
+    var dataArray7 = JSON.parse(data)
 
-    for (let i in dataArray) {
-        var rate = parseFloat(dataArray[i].rate);
+    for (let i in dataArray7) {
+        var rate = parseFloat(dataArray7[i].rate);
         switch (true) {
             case rate < 2 && rate >= 0:
                 var dataClass = {
-                    name: dataArray[i].title,
-                    value: dataArray[i]._id
+                    name: dataArray7[i].title,
+                    value: dataArray7[i]._id
                 }
                 data2Temp.children[0].children[0].children.push(dataClass);
                 break;
             case rate < 3 && rate >= 2:
                 var dataClass = {
-                    name: dataArray[i].title,
-                    value: dataArray[i]._id
+                    name: dataArray7[i].title,
+                    value: dataArray7[i]._id
                 }
                 data2Temp.children[0].children[1].children.push(dataClass);
                 break;
             case rate < 4 && rate >= 3:
                 var dataClass = {
-                    name: dataArray[i].title,
-                    value: dataArray[i]._id
+                    name: dataArray7[i].title,
+                    value: dataArray7[i]._id
                 }
                 data2Temp.children[0].children[2].children.push(dataClass);
                 break;
             case rate < 5 && rate >= 4:
                 var dataClass = {
-                    name: dataArray[i].title,
-                    value: dataArray[i]._id
+                    name: dataArray7[i].title,
+                    value: dataArray7[i]._id
                 }
                 data2Temp.children[0].children[3].children.push(dataClass);
                 break;
@@ -61,11 +61,11 @@ function renderGraph(data) {
 
     }
 
-    myChart.setOption(option);
+    myChart7.setOption(option7);
 
 
 
-    myChart.hideLoading();
+    myChart7.hideLoading();
 
 
 }
@@ -96,7 +96,7 @@ var data2Temp = {
 }
 
 
-var option = option = {
+var option7 = {
     tooltip: {
         trigger: 'item',
         triggerOn: 'mousemove'
@@ -115,7 +115,7 @@ var option = option = {
 
         label: {
             normal: {
-                position: 'left',
+                position: 'top',
                 verticalAlign: 'middle',
                 align: 'right',
                 fontSize: 15

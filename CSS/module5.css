@@ -1,8 +1,5 @@
-form.module2{
-    width: 265px;
-}
 
-div#graph2{
+div#graph5{
     width: 930px;
     height: 530px;
     margin-top: 20px;
@@ -10,7 +7,7 @@ div#graph2{
 }
 
 @media screen and (max-width: 1174px) {
-    div#graph2{
+    div#graph5{
         width: 800px;
         height: 530px;
         margin-top: 20px;
@@ -18,7 +15,7 @@ div#graph2{
     }
 }
 @media screen and (max-width: 989px) {
-    div#graph2{
+    div#graph5{
         width: 520px;
         height: 530px;
         margin-top: 20px;
@@ -27,7 +24,7 @@ div#graph2{
 }
 
 @media screen and (max-width: 574px) {
-    div#graph2{
+    div#graph5{
         width: 480px;
         height: 530px;
         margin-top: 20px;
@@ -36,7 +33,7 @@ div#graph2{
 }
 
 @media screen and (max-width: 412px) {
-    div#graph2{
+    div#graph5{
         width: 402px;
         height: 430px;
         margin-top: 20px;
@@ -45,7 +42,7 @@ div#graph2{
 }
 
 @media screen and (max-width: 375px) {
-    div#graph2{
+    div#graph5{
         width: 330px;
         height: 430px;
         margin-top: 20px;
@@ -54,7 +51,7 @@ div#graph2{
 }
 
 @media screen and (max-width: 320px) {
-    div#graph2{
+    div#graph5{
         width: 300px;
         height: 300px;
         margin-top: 20px;

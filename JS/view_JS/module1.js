@@ -6,7 +6,7 @@ function graphRender() {
 	$.ajax({
 		url: `http://127.0.0.1:8000/module1/${options.val()}`,
 		success: function (result) {
-			renderGraph(result);
+			renderGraph1(result);
 		},
 		async:true
 	});
@@ -38,6 +38,12 @@ function graphRender() {
 	
 		var myChart2 = echarts.init(document.getElementById('graph2'));
 		var myChart7 = echarts.init(document.getElementById('graph7'));
+		var myChart4 = echarts.init(document.getElementById('graph4'));
+		var myChart3 = echarts.init(document.getElementById('graph3'));
+		var myChart5 = echarts.init(document.getElementById('graph5'));
+		myChart4.resize();
+		myChart3.resize();
+		myChart5.resize();
 		myChart2.resize();
 		myChart7.resize();	
 		myChart.resize();
@@ -46,7 +52,7 @@ function graphRender() {
    
 
 	//var rateInterval=['9.5-10.0','8.5-9.0','7.5-8.0','6.5-7.0','5.5-6.0','4.5-5.0','3.5-4.0','2.5-3.0','小于2.5']
-	function renderGraph(result) {
+	function renderGraph1(result) {
 		var bar1 = [];
 		var bar2 = [];
 		var bar3 = [];

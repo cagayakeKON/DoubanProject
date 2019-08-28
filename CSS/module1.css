@@ -12,10 +12,55 @@ div#graph{
 }
 
 
-@media screen and (max-width: 756px) {
+
+@media screen and (max-width: 1174px) {
     div#graph{
-        width: 540px;
+        width: 800px;
         height: 530px;
+        margin-top: 20px;
+        
+    }
+}
+@media screen and (max-width: 989px) {
+    div#graph{
+        width: 520px;
+        height: 530px;
+        margin-top: 20px;
+        
+    }
+}
+
+@media screen and (max-width: 574px) {
+    div#graph{
+        width: 480px;
+        height: 530px;
+        margin-top: 20px;
+        
+    }
+}
+
+@media screen and (max-width: 412px) {
+    div#graph{
+        width: 402px;
+        height: 430px;
+        margin-top: 20px;
+        
+    }
+}
+
+@media screen and (max-width: 375px) {
+    div#graph{
+        width: 330px;
+        height: 430px;
+        margin-top: 20px;
+        
+    }
+}
+
+@media screen and (max-width: 320px) {
+    div#graph{
+        width: 300px;
+        height: 300px;
         margin-top: 20px;
         
     }

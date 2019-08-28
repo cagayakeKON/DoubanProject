@@ -166,6 +166,13 @@ function module1(req, res) {
 
 
 }
+
+function module4(req,res){
+    model.findAllData(function(data){
+        res.write(JSON.stringify(data));
+        res.end("");
+    })
+}
 function module7(req,res){
     model.module7FindChinaRateLess5MovieName(function(data){
         res.write(JSON.stringify(data));
@@ -173,11 +180,27 @@ function module7(req,res){
     })
 
 }
+function module3(req, res) {
+    model.findAllData(function (data) {
+        res.write(JSON.stringify(data));
+        res.end("");
+    })
+}
+
+function module5(req, res) {
+    model.findAllData(function (data) {
+        res.write(JSON.stringify(data));
+        res.end("");
+    })
+}
 
 module.exports = {
     mainPage: mainPage,
     module1: module1,
     module2: module2,
-    module7:module7
+    module7:module7,
+    module4:module4,
+    module3: module3,
+    module5: module5
 
 }
