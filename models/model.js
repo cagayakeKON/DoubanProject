@@ -97,7 +97,7 @@ function findAllData(callback) {
     });
 }
 
-function findModule1CountryDocument(countryName, callback) {
+function findCountryData(countryName, callback) {
 
 
     mongoClient.connect(url, {
@@ -135,7 +135,7 @@ function module7FindChinaRateLess5MovieName(callback) {
 module.exports = {
     saveAllData: saveAllData,
     saveCountryData: saveCountryData,
-    findModule1CountryDocument: findModule1CountryDocument,
+    findCountryData: findCountryData,
     module7FindChinaRateLess5MovieName: module7FindChinaRateLess5MovieName,
     findAllData:findAllData
    

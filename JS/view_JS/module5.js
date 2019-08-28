@@ -61,7 +61,7 @@ function renderGraph5(data) {
 
 var option5 = {
     title : {
-        text: '近十年电影评分分布图',
+        text: '近十年中国电影评分分布图',
         subtext: '2009～2019',
         x:'center'
     },

@@ -80,7 +80,7 @@ function module2(req, res) {
              var countryName = '中国大陆';
 
     }
-    model.findModule1CountryDocument(countryName, function (data) {
+    model.findCountryData(countryName, function (data) {
         res.write(JSON.stringify(data));
         res.end("");
     })
@@ -159,7 +159,7 @@ function module1(req, res) {
              var countryName = '中国';
 
     }
-    model.findModule1CountryDocument(countryName, function (data) {
+    model.findCountryData(countryName, function (data) {
         res.write(JSON.stringify(data));
         res.end("");
     })
@@ -188,7 +188,7 @@ function module3(req, res) {
 }
 
 function module5(req, res) {
-    model.findAllData(function (data) {
+    model.findCountryData('中国大陆',function (data) {
         res.write(JSON.stringify(data));
         res.end("");
     })
