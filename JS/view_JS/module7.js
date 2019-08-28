@@ -31,28 +31,28 @@ function renderGraph7(data) {
                     name: dataArray7[i].title,
                     value: dataArray7[i]._id
                 }
-                data2Temp.children[0].children[0].children.push(dataClass);
+                data2Temp7.children[0].children[0].children.push(dataClass);
                 break;
             case rate < 3 && rate >= 2:
                 var dataClass = {
                     name: dataArray7[i].title,
                     value: dataArray7[i]._id
                 }
-                data2Temp.children[0].children[1].children.push(dataClass);
+                data2Temp7.children[0].children[1].children.push(dataClass);
                 break;
             case rate < 4 && rate >= 3:
                 var dataClass = {
                     name: dataArray7[i].title,
                     value: dataArray7[i]._id
                 }
-                data2Temp.children[0].children[2].children.push(dataClass);
+                data2Temp7.children[0].children[2].children.push(dataClass);
                 break;
             case rate < 5 && rate >= 4:
                 var dataClass = {
                     name: dataArray7[i].title,
                     value: dataArray7[i]._id
                 }
-                data2Temp.children[0].children[3].children.push(dataClass);
+                data2Temp7.children[0].children[3].children.push(dataClass);
                 break;
             default:
                 break;
@@ -70,7 +70,7 @@ function renderGraph7(data) {
 
 }
 
-var data2Temp = {
+var data2Temp7 = {
     "name": "电影名称",
     "children": [{
         "name": "按评分分类",
@@ -104,7 +104,7 @@ var option7 = {
     series: [{
         type: 'tree',
 
-        data: [data2Temp],
+        data: [data2Temp7],
 
         top: '1%',
         left: '7%',

@@ -193,7 +193,12 @@ function module5(req, res) {
         res.end("");
     })
 }
-
+function module6(req, res) {
+    model.findAllData(function (data) {
+        res.write(JSON.stringify(data));
+        res.end("");
+    })
+}
 module.exports = {
     mainPage: mainPage,
     module1: module1,
@@ -201,6 +206,7 @@ module.exports = {
     module7:module7,
     module4:module4,
     module3: module3,
-    module5: module5
+    module5: module5,
+    module6:module6
 
 }

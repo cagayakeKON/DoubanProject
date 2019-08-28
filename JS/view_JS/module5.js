@@ -3,7 +3,7 @@ var myChart5 = echarts.init(document.getElementById('graph5'));
 myChart5.showLoading()
 
 $.ajax({
-    url: `http://127.0.0.1:8000/module5`,
+    url: `http://127.0.0.1:8000/module6`,
     success: function (result) {
         //data2=JSON.parse(result)
 
@@ -61,7 +61,7 @@ function renderGraph5(data) {
 
 var option5 = {
     title : {
-        text: '近十年中国电影评分分布图',
+        text: '近十年电影评分分布图',
         subtext: '2009～2019',
         x:'center'
     },

@@ -1,10 +1,10 @@
-function graphRender() {
-	var myChart = echarts.init(document.getElementById('graph'));
-	var options = $("#module1CountrySelect option:selected");
-	myChart.showLoading();
+function graphRender1() {
+	var myChart1 = echarts.init(document.getElementById('graph'));
+	var options1 = $("#module1CountrySelect option:selected");
+	myChart1.showLoading();
 
 	$.ajax({
-		url: `http://127.0.0.1:8000/module1/${options.val()}`,
+		url: `http://127.0.0.1:8000/module1/${options1.val()}`,
 		success: function (result) {
 			renderGraph1(result);
 		},
@@ -18,7 +18,7 @@ function graphRender() {
 
 	$('#module1ButtonSubmit').on('click', function () {
 		var options = $("#module1CountrySelect option:selected");
-		myChart.showLoading();
+		myChart1.showLoading();
 
 		$.ajax({
 			url: `http://127.0.0.1:8000/module1/${options.val()}`,
@@ -41,12 +41,14 @@ function graphRender() {
 		var myChart4 = echarts.init(document.getElementById('graph4'));
 		var myChart3 = echarts.init(document.getElementById('graph3'));
 		var myChart5 = echarts.init(document.getElementById('graph5'));
+		var myChart6 = echarts.init(document.getElementById('graph6'));
+		myChart6.resize();
 		myChart4.resize();
 		myChart3.resize();
 		myChart5.resize();
 		myChart2.resize();
 		myChart7.resize();	
-		myChart.resize();
+		myChart1.resize();
 
     }
    
@@ -136,20 +138,20 @@ function graphRender() {
 
 		var count=[bar1.length,bar2.length,bar3.length,bar4.length,bar5.length,bar6.length,bar7.length,bar8.length,bar9.length]
 
-		tempOptions.baseOption.series[0].data=[];
+		tempOptions1.baseOption.series[0].data=[];
 		for(let item of count)
 		{
-			tempOptions.baseOption.series[0].data.push(item);
+			tempOptions1.baseOption.series[0].data.push(item);
 		}
 
 
-			myChart.setOption(tempOptions);
-			myChart.hideLoading();
+			myChart1.setOption(tempOptions1);
+			myChart1.hideLoading();
 
 
 	}
 
-	var tempOptions = {
+	var tempOptions1 = {
 		baseOption:{title: {
 			text: '影评分和电影数量分析'
 		},
@@ -200,7 +202,7 @@ function graphRender() {
 
 }
 
-$(graphRender());
+$(graphRender1());
 /*$.get("http://127.0.0.1:8000/module1_data", function (data) {
 	console.log(data);
 	renderReport(data);
