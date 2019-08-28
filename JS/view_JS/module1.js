@@ -23,7 +23,7 @@ function graphRender1() {
 		$.ajax({
 			url: `http://127.0.0.1:8000/module1/${options.val()}`,
 			success: function (result) {
-				renderGraph(result);
+				renderGraph1(result);
 			},
 			async:true
 		});

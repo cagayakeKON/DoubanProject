@@ -105,7 +105,12 @@ function findCountryData(countryName, callback) {
     }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
-        dbo.collection(countryName).find().toArray(function (err, result) {
+        var re2 = new RegExp(countryName);
+        var temClass={
+            country:countryName
+        }
+        
+        dbo.collection('main2').find(temClass).toArray(function (err, result) {
             if (err) throw err;
             db.close();
             callback(result);
