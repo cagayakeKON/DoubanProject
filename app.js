@@ -7,6 +7,15 @@ app.use("/plugin",express.static("plugin"));
 app.use("/JS",express.static("JS"));
 app.use("/CSS",express.static("CSS"))
 app.get("/",controller.mainPage);
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.header("X-Powered-By",' 3.2.1')
+   
+    next();
+});
+
 
 
 //下面是七个数量分析的数据的路由,由于英语太长,所以以module1-7命名
