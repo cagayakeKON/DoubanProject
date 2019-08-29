@@ -28723,7 +28723,7 @@ function init(dom, theme$$1, opts) {
     var existInstance = getInstanceByDom(dom);
     if (existInstance) {
         if (__DEV__) {
-            console.warn('There is a chart instance already initialized on the dom.');
+           
         }
         return existInstance;
     }

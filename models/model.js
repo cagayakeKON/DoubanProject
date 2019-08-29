@@ -59,7 +59,8 @@ function saveCountryData(object, collectionName) {
     }
 
     mongoClient.connect(url, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }, function (error, db) {
         if (error) {
             console.log(链接数据库失败error)
@@ -84,7 +85,8 @@ function saveCountryData(object, collectionName) {
 
 function findAllData(callback) {
     mongoClient.connect(url, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
@@ -101,7 +103,9 @@ function findCountryData(countryName, callback) {
 
 
     mongoClient.connect(url, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+        
     }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
@@ -121,13 +125,13 @@ function findCountryData(countryName, callback) {
 
 function module7FindChinaRateLess5MovieName(callback) {
     mongoClient.connect(url, {
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true
     }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("doubanDatabases");
         dbo.collection('main2').find({
             'date': /2019/,
-            'country': /中国大陆/,
             "rate": /^[0-5].[0-9]*$/
         }).toArray(function (err, result) {
             if (err) throw err;

@@ -47,12 +47,19 @@ function renderGraph7(data) {
                 }
                 data2Temp7.children[0].children[2].children.push(dataClass);
                 break;
-            case rate < 5 && rate >= 4:
+            case rate < 4.5 && rate >= 4:
                 var dataClass = {
                     name: dataArray7[i].title,
                     value: dataArray7[i]._id
                 }
                 data2Temp7.children[0].children[3].children.push(dataClass);
+                break;
+            case rate <=5 && rate >= 4.5:
+                var dataClass = {
+                    name: dataArray7[i].title,
+                    value: dataArray7[i]._id
+                }
+                data2Temp7.children[0].children[4].children.push(dataClass);
                 break;
             default:
                 break;
@@ -87,7 +94,11 @@ var data2Temp7 = {
                 "children": []
             },
             {
-                "name": "4-5分",
+                "name": "4-4.5分",
+                "children": []
+            },
+            {
+                "name": "4.5-5分",
                 "children": []
             }
         ]
@@ -111,14 +122,14 @@ var option7 = {
         bottom: '1%',
         right: '20%',
 
-        symbolSize: 15,
+        symbolSize: 13,
 
         label: {
             normal: {
                 position: 'top',
                 verticalAlign: 'middle',
                 align: 'right',
-                fontSize: 15
+                fontSize: 13
             }
         },
 
